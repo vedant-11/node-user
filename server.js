@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 // openai.apiKey = OPENAI_API_KEY;
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 app.post("/generate_explanation", (req, res) => {

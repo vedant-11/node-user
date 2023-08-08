@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
@@ -12,10 +12,10 @@ app.use(bodyParser.json());
 // openai.apiKey = OPENAI_API_KEY;
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPEN_AI_API_KEY,
 });
 
-app.post("/generate_explanation", (req, res) => {
+app.post("/explanation", (req, res) => {
   const { title, chart_type, x_title, x_value, y_title, y_value } = req.body;
 
   // Generate the prompt for GPT-3

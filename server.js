@@ -34,6 +34,10 @@ app.post("/generate_explanation", (req, res) => {
     });
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 async function generateUsingOpenAI(prompt) {
   const openai = new OpenAIApi(configuration);
   const response = await openai.createCompletion({

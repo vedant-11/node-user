@@ -4,8 +4,9 @@ const { Configuration, OpenAIApi } = require("openai");
 require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+const cors = require("cors");
 app.use(bodyParser.json());
+app.use(cors());
 
 // Configure your OpenAI API key
 // const OPENAI_API_KEY = "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";
